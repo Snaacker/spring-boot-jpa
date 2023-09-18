@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Library {
+public class Library extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;

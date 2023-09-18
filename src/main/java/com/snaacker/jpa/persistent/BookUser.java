@@ -1,5 +1,7 @@
 package com.snaacker.jpa.persistent;
 
+import static jakarta.persistence.TemporalType.TIMESTAMP;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -7,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
 import java.util.Date;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +22,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookUser {
+public class BookUser extends Auditable {
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "book_id")
@@ -31,5 +34,6 @@ public class BookUser {
     private User users;
 
     @Column(name = "borrow_date")
+    @Temporal(TIMESTAMP)
     private Date borrowDate;
 }
