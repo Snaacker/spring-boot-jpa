@@ -1,12 +1,10 @@
 package com.snaacker.jpa.persistent;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Set;
 
 @Entity
 @Table(name = "book")
@@ -14,17 +12,15 @@ import java.util.Set;
 @Getter
 @Setter
 public class Book {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
 
-  @Column(name = "name")
-  String name;
+    @Column(name = "name")
+    String name;
 
-  @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
-  Set<BookUser> bookUser;
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    Set<BookUser> bookUser;
 
-  @ManyToMany
-  Set<Library> library;
-
+    @ManyToMany Set<Library> library;
 }

@@ -5,7 +5,6 @@ import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.rest.core.annotation.RestResource;
 
 @Entity
 @Table(name = "users")
@@ -13,13 +12,13 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @Getter
 @Setter
 public class User {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int id;
 
-  @Column(name = "name")
-  String name;
+    @Column(name = "name")
+    String name;
 
-  @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
-  Set<BookUser> bookUser;
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    Set<BookUser> bookUser;
 }
