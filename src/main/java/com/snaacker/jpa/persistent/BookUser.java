@@ -14,12 +14,12 @@ import lombok.Setter;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 @Entity
-@Table(name = "book_library")
+@Table(name = "book_user")
 @RestResource(exported = false)
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookLibrary {
+public class BookUser {
   @Id
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "book_id")
@@ -27,8 +27,8 @@ public class BookLibrary {
 
   @Id
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "library_id")
-  private Library library;
+  @JoinColumn(name = "user_id")
+  private User users;
 
   @Column(name = "borrow_date")
   private Date borrowDate;

@@ -8,16 +8,18 @@ import lombok.Setter;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @NoArgsConstructor
 @Getter
 @Setter
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-    @Column(name = "name")
-    String name;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    Set<Book> borrowBook;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  int id;
+
+  @Column(name = "name")
+  String name;
+
+  @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+  Set<BookUser> bookUser;
 }
