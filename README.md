@@ -1,6 +1,7 @@
 # spring-boot-jpa
+[![Build Gradle project](https://github.com/Snaacker/spring-boot-jpa/actions/workflows/build-gradle-project.yml/badge.svg)](https://github.com/Snaacker/spring-boot-jpa/actions/workflows/build-gradle-project.yml)
+
 Spring Data JPA example project
-![example workflow](https://github.com/Snaacker/spring-boot-jpa/actions/workflows/main.yml/badge.svg)
 
 ## Prerequisite
 - Java 17
