@@ -26,8 +26,8 @@ public class Book extends BaseEntity {
     @Column(name = "available")
     int available;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "author_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "author_id")
     Author author;
 
     @Column(name = "genre")
