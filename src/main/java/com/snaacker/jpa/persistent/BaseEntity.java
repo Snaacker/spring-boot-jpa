@@ -2,6 +2,7 @@ package com.snaacker.jpa.persistent;
 
 import static jakarta.persistence.TemporalType.TIMESTAMP;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
@@ -18,7 +19,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-public abstract class Auditable {
+public abstract class BaseEntity {
     @CreatedBy protected Long createdBy;
 
     @CreatedDate
@@ -30,4 +31,7 @@ public abstract class Auditable {
     @LastModifiedDate
     @Temporal(TIMESTAMP)
     protected Date lastModifiedDate;
+
+    @Column(name = "description")
+    String description;
 }

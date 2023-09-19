@@ -8,11 +8,9 @@ Spring Data JPA example project
 - Gradle
 
 ## Features
-- CRUD for JPA Entities
-  - Book
-  - Library
-  - User
-- Query using query method names
+- CRUD operations
+- QueryDSL
+- Audit of domain class
 
 ## Database design
 

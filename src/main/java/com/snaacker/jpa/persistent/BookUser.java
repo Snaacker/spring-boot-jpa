@@ -22,7 +22,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookUser extends Auditable {
+public class BookUser extends BaseEntity {
     @Id
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "book_id")
